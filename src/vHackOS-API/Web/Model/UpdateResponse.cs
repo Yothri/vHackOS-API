@@ -65,7 +65,7 @@ namespace vHackOS.Web.Model
         public string Netcoins { get; set; }
 
         [JsonProperty("level")]
-        public string Level { get; set; }
+        public int Level { get; set; }
 
         [JsonProperty("money")]
         public string Money { get; set; }
@@ -77,25 +77,25 @@ namespace vHackOS.Web.Model
         public string Username { get; set; }
 
         [JsonProperty("fw")]
-        public string Fw { get; set; }
+        public int Fw { get; set; }
 
         [JsonProperty("av")]
-        public string Av { get; set; }
+        public int Av { get; set; }
 
         [JsonProperty("sdk")]
-        public string Sdk { get; set; }
+        public int Sdk { get; set; }
 
         [JsonProperty("ccolor")]
         public string Ccolor { get; set; }
 
         [JsonProperty("brute")]
-        public string Brute { get; set; }
+        public int Brute { get; set; }
 
         [JsonProperty("spam")]
-        public string Spam { get; set; }
+        public int Spam { get; set; }
 
         [JsonProperty("mwk")]
-        public string Mwk { get; set; }
+        public int Mwk { get; set; }
 
         [JsonProperty("mod")]
         public string Mod { get; set; }

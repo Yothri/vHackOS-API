@@ -9,10 +9,10 @@ namespace vHackOS.Web.Model
         public string Tutor { get; set; }
 
         [JsonProperty("exploits")]
-        public string Exploits { get; set; }
+        public int Exploits { get; set; }
 
         [JsonProperty("connectionCount")]
-        public string ConnectionCount { get; set; }
+        public int ConnectionCount { get; set; }
 
         [JsonProperty("ips")]
         public IList<IP> Ips { get; set; }
@@ -47,6 +47,12 @@ namespace vHackOS.Web.Model
         public string Username { get; set; }
 
         [JsonProperty("brute")]
-        public string Brute { get; set; }
+        public BruteState Brute { get; set; }
+    }
+
+    public enum BruteState
+    {
+        Success = 1,
+        NotBruted
     }
 }

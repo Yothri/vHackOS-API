@@ -16,6 +16,7 @@ namespace vHackOS
         public vhMalwareKit MalwareKitEndpoint { get; }
         public vhNetwork NetworkEndpoint { get; }
         public vhExploit ExploitEndpoint { get; }
+        public vhBruteforce BruteforceEndpoint { get; }
 
         public vhGame()
         {
@@ -29,6 +30,7 @@ namespace vHackOS
             MalwareKitEndpoint = new vhMalwareKit();
             NetworkEndpoint = new vhNetwork();
             ExploitEndpoint = new vhExploit();
+            BruteforceEndpoint = new vhBruteforce();
 
             LoginEndpoint.OnLogin += LoginEndpoint_OnLogin;
         }
@@ -49,6 +51,7 @@ namespace vHackOS
             MalwareKitEndpoint.SetCredentials(credentials);
             NetworkEndpoint.SetCredentials(credentials);
             ExploitEndpoint.SetCredentials(credentials);
+            BruteforceEndpoint.SetCredentials(credentials);
         }
 
         ~vhGame()
@@ -76,6 +79,7 @@ namespace vHackOS
                 MalwareKitEndpoint?.Dispose();
                 NetworkEndpoint?.Dispose();
                 ExploitEndpoint?.Dispose();
+                BruteforceEndpoint?.Dispose();
             }
         }
     }
