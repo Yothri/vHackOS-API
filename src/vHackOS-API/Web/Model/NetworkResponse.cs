@@ -52,7 +52,8 @@ namespace vHackOS.Web.Model
 
     public enum BruteState
     {
-        Success = 1,
+        InProgress,
+        Success,
         NotBruted
     }
 }
