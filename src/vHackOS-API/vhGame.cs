@@ -18,6 +18,8 @@ namespace vHackOS
         public vhExploit ExploitEndpoint { get; }
         public vhBruteforce BruteforceEndpoint { get; }
         public vhRemoteBank RemoteBankEndpoint { get; }
+        public vhMissions MissionsEndpoint { get; }
+        public vhRemoteLog RemoteLogEndpoint { get; }
 
         public vhGame()
         {
@@ -33,6 +35,8 @@ namespace vHackOS
             ExploitEndpoint = new vhExploit();
             BruteforceEndpoint = new vhBruteforce();
             RemoteBankEndpoint = new vhRemoteBank();
+            MissionsEndpoint = new vhMissions();
+            RemoteLogEndpoint = new vhRemoteLog();
 
             LoginEndpoint.OnLogin += LoginEndpoint_OnLogin;
         }
@@ -55,6 +59,8 @@ namespace vHackOS
             ExploitEndpoint.SetCredentials(credentials);
             BruteforceEndpoint.SetCredentials(credentials);
             RemoteBankEndpoint.SetCredentials(credentials);
+            MissionsEndpoint.SetCredentials(credentials);
+            RemoteLogEndpoint.SetCredentials(credentials);
         }
 
         ~vhGame()
@@ -84,6 +90,8 @@ namespace vHackOS
                 ExploitEndpoint?.Dispose();
                 BruteforceEndpoint?.Dispose();
                 RemoteBankEndpoint?.Dispose();
+                MissionsEndpoint?.Dispose();
+                RemoteLogEndpoint?.Dispose();
             }
         }
     }
