@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using vHackOS.Web.Exceptions;
 using vHackOS.Web.Model;
@@ -48,6 +49,8 @@ namespace vHackOS.Web
 
         internal async Task<T> ExecuteAsync(vhRequest request)
         {
+            await Task.Delay(500);
+
             var response = JsonConvert.DeserializeObject<T>(await Client?.GetStringAsync(API_URL + Endpoint + request.GetRequestPayload()));
 
             if (response.Result == "36")
@@ -65,6 +68,8 @@ namespace vHackOS.Web
 
         internal T Execute(vhRequest request)
         {
+            Thread.Sleep(500);
+
             var response = JsonConvert.DeserializeObject<T>(Client?.GetStringAsync(API_URL + Endpoint + request.GetRequestPayload()).Result);
 
             if (response.Result == "36")
