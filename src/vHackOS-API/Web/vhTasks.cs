@@ -68,5 +68,15 @@ namespace vHackOS.Web
 
             return await ExecuteAsync(req);
         }
+
+        public TasksResponse RemoveBruteforce(Brute brute)
+        {
+            var req = CreateRequest();
+
+            req.AddParam("action", "10000");
+            req.AddParam("updateid", brute.Id);
+
+            return Execute(req);
+        }
     }
 }
