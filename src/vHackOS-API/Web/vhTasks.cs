@@ -48,5 +48,25 @@ namespace vHackOS.Web
 
             return await ExecuteAsync(req);
         }
+
+        public TasksResponse BoostUpdates(Update update)
+        {
+            var req = CreateRequest();
+
+            req.AddParam("action", "888");
+            req.AddParam("updateid", update.Id.ToString());
+
+            return Execute(req);
+        }
+
+        public async Task<TasksResponse> BoostUpdatesAsync(Update update)
+        {
+            var req = CreateRequest();
+
+            req.AddParam("action", "888");
+            req.AddParam("updateid", update.Id.ToString());
+
+            return await ExecuteAsync(req);
+        }
     }
 }
