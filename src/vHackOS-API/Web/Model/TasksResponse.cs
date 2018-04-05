@@ -45,7 +45,7 @@ namespace vHackOS.Web.Model
         public string Nextdone { get; set; }
 
         [JsonProperty("bruteCount")]
-        public string BruteCount { get; set; }
+        public int BruteCount { get; set; }
 
         [JsonProperty("brutes")]
         public Brute[] Brutes { get; set; }
@@ -54,13 +54,13 @@ namespace vHackOS.Web.Model
         public string Nextdone2 { get; set; }
 
         [JsonProperty("level")]
-        public string Level { get; set; }
+        public int Level { get; set; }
 
         [JsonProperty("netcoins")]
-        public string Netcoins { get; set; }
+        public int Netcoins { get; set; }
 
         [JsonProperty("boosters")]
-        public string Boosters { get; set; }
+        public int Boosters { get; set; }
     }
 
     public class Update
@@ -73,16 +73,16 @@ namespace vHackOS.Web.Model
         public AppType Appid { get; set; }
 
         [JsonProperty("start")]
-        public string Start { get; set; }
+        public int Start { get; set; }
 
         [JsonProperty("end")]
-        public string End { get; set; }
+        public int End { get; set; }
 
         [JsonProperty("now")]
-        public string Now { get; set; }
+        public int Now { get; set; }
 
         [JsonProperty("level")]
-        public string Level { get; set; }
+        public int Level { get; set; }
     }
 
     public class Brute

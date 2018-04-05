@@ -16,6 +16,7 @@ namespace vHackOS.Web
             var req = CreateRequest();
 
             req.AddParam("target", targetIp);
+            req.AddParam("action", "100");
             req.AddParam("amount", amount.ToString());
 
             var result = Execute(req);

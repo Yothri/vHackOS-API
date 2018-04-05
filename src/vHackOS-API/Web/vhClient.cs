@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -49,7 +51,7 @@ namespace vHackOS.Web
 
         internal async Task<T> ExecuteAsync(vhRequest request)
         {
-            await Task.Delay(500);
+            await Task.Delay(1000);
 
             var response = JsonConvert.DeserializeObject<T>(await Client?.GetStringAsync(API_URL + Endpoint + request.GetRequestPayload()));
 
@@ -69,8 +71,15 @@ namespace vHackOS.Web
         internal T Execute(vhRequest request)
         {
             Thread.Sleep(500);
-
-            var response = JsonConvert.DeserializeObject<T>(Client?.GetStringAsync(API_URL + Endpoint + request.GetRequestPayload()).Result);
+            var req = WebRequest.Create(API_URL + Endpoint + request.GetRequestPayload());
+            req.Proxy = null;
+            
+            var response = default(T);
+            using (var res = req.GetResponse())
+            using (var reader = new StreamReader(res.GetResponseStream()))
+            {
+                response = JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
+            }
 
             if (response.Result == "36")
                 throw new UnauthorizedException("Invalid or missing authentication credentials.");
