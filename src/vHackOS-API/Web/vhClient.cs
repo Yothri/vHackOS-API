@@ -78,7 +78,8 @@ namespace vHackOS.Web
             using (var res = req.GetResponse())
             using (var reader = new StreamReader(res.GetResponseStream()))
             {
-                response = JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
+                var str = reader.ReadToEnd();
+                response = JsonConvert.DeserializeObject<T>(str);
             }
 
             if (response.Result == "36")

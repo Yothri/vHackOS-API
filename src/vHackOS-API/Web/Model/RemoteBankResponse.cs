@@ -79,6 +79,6 @@ namespace vHackOS.Web.Model
         public string ToIp { get; set; }
 
         [JsonProperty("amount")]
-        public int Amount { get; set; }
+        public long Amount { get; set; }
     }
 }
