@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace vHackOS.Web.Model
 {
@@ -15,7 +17,7 @@ namespace vHackOS.Web.Model
         public int Claimed { get; set; }
 
         [JsonProperty("claimNextDay")]
-        public string ClaimNextDay { get; set; }
+        public int ClaimNextDay { get; set; }
 
         [JsonProperty("nextDailyReset")]
         public string NextDailyReset { get; set; }
@@ -43,9 +45,16 @@ namespace vHackOS.Web.Model
         public int Exp { get; set; }
 
         [JsonProperty("rewType")]
-        public string RewType { get; set; }
+        public RewardType RewType { get; set; }
 
         [JsonProperty("rewAmount")]
-        public int RewAmount { get; set; }
+        public int RewardAmount { get; set; }
+    }
+
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum RewardType
+    {
+        [EnumMember(Value = "NetCoins")] NetCoins,
+        [EnumMember(Value = "Boosters")] Boosters
     }
 }

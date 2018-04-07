@@ -1,31 +1,35 @@
 ﻿using Newtonsoft.Json;
+using vHackOS.Converters;
 
 namespace vHackOS.Web.Model
 {
     public sealed class MinerResponse : ResponseBase
     {
         [JsonProperty("running")]
-        public int Running { get; set; }
+        public MinerState MinerState { get; set; }
 
         [JsonProperty("applied")]
-        public string Applied { get; set; }
+        [JsonConverter(typeof(StringToBoolConverter))]
+        public bool Applied { get; set; }
 
         [JsonProperty("claimed")]
-        public string Claimed { get; set; }
+        [JsonConverter(typeof(StringToBoolConverter))]
+        public bool Claimed { get; set; }
 
         [JsonProperty("started")]
-        public string Started { get; set; }
+        [JsonConverter(typeof(StringToBoolConverter))]
+        public bool StartSuccessful { get; set; }
 
         [JsonProperty("left")]
-        public string Left { get; set; }
+        public int Left { get; set; }
 
         [JsonProperty("need")]
-        public string Need { get; set; }
+        public int Need { get; set; }
 
         [JsonProperty("is")]
-        public string Is { get; set; }
+        public int Is { get; set; }
 
         [JsonProperty("netcoins")]
-        public string Netcoins { get; set; }
+        public int Netcoins { get; set; }
     }
 }
