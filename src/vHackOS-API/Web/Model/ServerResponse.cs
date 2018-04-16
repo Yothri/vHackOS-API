@@ -32,25 +32,25 @@ namespace vHackOS.Web.Model
         public string BoughtLimit { get; set; }
 
         [JsonProperty("server_str")]
-        public string ServerStr { get; set; }
+        public int ServerStr { get; set; }
 
         [JsonProperty("av1_str")]
-        public string Av1Str { get; set; }
+        public int Av1Str { get; set; }
 
         [JsonProperty("av2_str")]
-        public string Av2Str { get; set; }
+        public int Av2Str { get; set; }
 
         [JsonProperty("av3_str")]
-        public string Av3Str { get; set; }
+        public int Av3Str { get; set; }
 
         [JsonProperty("fw1_str")]
-        public string Fw1Str { get; set; }
+        public int Fw1Str { get; set; }
 
         [JsonProperty("fw2_str")]
-        public string Fw2Str { get; set; }
+        public int Fw2Str { get; set; }
 
         [JsonProperty("fw3_str")]
-        public string Fw3Str { get; set; }
+        public int Fw3Str { get; set; }
 
         [JsonProperty("sServer")]
         public int SServer { get; set; }
@@ -65,28 +65,28 @@ namespace vHackOS.Web.Model
         public int SBoost { get; set; }
 
         [JsonProperty("server_pieces")]
-        public string ServerPieces { get; set; }
+        public int ServerPieces { get; set; }
 
         [JsonProperty("av_pieces")]
-        public string AvPieces { get; set; }
+        public int AvPieces { get; set; }
 
         [JsonProperty("fw_pieces")]
-        public string FwPieces { get; set; }
+        public int FwPieces { get; set; }
 
         [JsonProperty("packs")]
         public int Packs { get; set; }
 
         [JsonProperty("server_str_max")]
-        public string ServerStrMax { get; set; }
+        public int ServerStrMax { get; set; }
 
         [JsonProperty("server_str_stars")]
         public string ServerStrStars { get; set; }
 
         [JsonProperty("avnodes")]
-        public string Avnodes { get; set; }
+        public int Avnodes { get; set; }
 
         [JsonProperty("fwnodes")]
-        public string Fwnodes { get; set; }
+        public int Fwnodes { get; set; }
 
         [JsonProperty("nextpackin")]
         public string Nextpackin { get; set; }
