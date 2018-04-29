@@ -44,5 +44,14 @@ namespace vHackOS.Web
 
             return await ExecuteAsync(req);
         }
+
+        public MinerResponse AddGPU()
+        {
+            var req = CreateRequest();
+
+            req.AddParam("action", "8888");
+
+            return Execute(req);
+        }
     }
 }

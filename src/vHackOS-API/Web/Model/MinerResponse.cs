@@ -31,5 +31,13 @@ namespace vHackOS.Web.Model
 
         [JsonProperty("netcoins")]
         public int Netcoins { get; set; }
+
+        [JsonProperty("gpuCount")]
+        public int GPUCount { get; set; }
+
+        [JsonProperty("upgraded")]
+        [JsonConverter(typeof(StringToBoolConverter))]
+        public bool Upgraded { get; set; }
+
     }
 }

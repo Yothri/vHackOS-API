@@ -12,7 +12,7 @@ namespace vHackOS.Web
 {
     public abstract class vhClient<T> : IDisposable where T : ResponseBase
     {
-        private const string API_URL = "https://api.vhack.cc/mobile/15/";
+        private const string API_URL = "https://api.vhack.cc/mobile/16/";
         
         protected HttpClient Client { get; }
         
