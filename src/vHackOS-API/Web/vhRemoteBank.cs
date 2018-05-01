@@ -11,7 +11,7 @@ namespace vHackOS.Web
 
         public string TargetIp { get; set; }
 
-        public RemoteBankResponse Withdraw(string targetIp, int amount)
+        public RemoteBankResponse Withdraw(string targetIp, long amount)
         {
             var req = CreateRequest();
 
@@ -24,7 +24,7 @@ namespace vHackOS.Web
             return result;
         }
 
-        public async Task<RemoteBankResponse> WithdrawAsync(string targetIp, int amount)
+        public async Task<RemoteBankResponse> WithdrawAsync(string targetIp, long amount)
         {
             var req = CreateRequest();
 
