@@ -24,10 +24,10 @@ namespace vHackOS.Web.Model
         public string Remotepassword { get; set; }
 
         [JsonProperty("money")]
-        public int Money { get; set; }
+        public long Money { get; set; }
 
         [JsonProperty("remotemoney")]
-        public int Remotemoney { get; set; }
+        public long Remotemoney { get; set; }
 
         [JsonProperty("savings")]
         public string Savings { get; set; }

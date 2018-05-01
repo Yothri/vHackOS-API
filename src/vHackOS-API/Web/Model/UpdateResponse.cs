@@ -68,7 +68,7 @@ namespace vHackOS.Web.Model
         public int Level { get; set; }
 
         [JsonProperty("money")]
-        public int Money { get; set; }
+        public long Money { get; set; }
 
         [JsonProperty("ipaddress")]
         public string Ipaddress { get; set; }

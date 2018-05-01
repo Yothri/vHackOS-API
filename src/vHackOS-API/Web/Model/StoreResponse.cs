@@ -50,7 +50,7 @@ namespace vHackOS.Web.Model
         public string Level { get; set; }
 
         [JsonProperty("money")]
-        public string Money { get; set; }
+        public long Money { get; set; }
 
         [JsonProperty("spam")]
         public string Spam { get; set; }
