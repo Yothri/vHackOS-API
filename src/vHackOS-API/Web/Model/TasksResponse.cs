@@ -39,7 +39,7 @@ namespace vHackOS.Web.Model
         public Update[] Updates { get; set; }
 
         [JsonProperty("finishallcosts")]
-        public string Finishallcosts { get; set; }
+        public long Finishallcosts { get; set; }
 
         [JsonProperty("nextdone")]
         public string Nextdone { get; set; }
