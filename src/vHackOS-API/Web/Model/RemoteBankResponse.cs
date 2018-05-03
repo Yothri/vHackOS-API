@@ -48,13 +48,13 @@ namespace vHackOS.Web.Model
         public string Nextp { get; set; }
 
         [JsonProperty("total")]
-        public int Total { get; set; }
+        public long Total { get; set; }
 
         [JsonProperty("maxsavings")]
-        public int Maxsavings { get; set; }
+        public long Maxsavings { get; set; }
 
         [JsonProperty("transcount")]
-        public int Transcount { get; set; }
+        public long Transcount { get; set; }
 
         [JsonProperty("transactions")]
         public IList<Transaction> Transactions { get; set; }
