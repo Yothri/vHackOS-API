@@ -50,19 +50,19 @@ namespace vHackOS.Web.Model
         public string Uid { get; set; }
 
         [JsonProperty("exploits")]
-        public string Exploits { get; set; }
+        public int Exploits { get; set; }
 
         [JsonProperty("exp")]
-        public string Exp { get; set; }
+        public int Exp { get; set; }
 
         [JsonProperty("expreq")]
-        public string Expreq { get; set; }
+        public int Expreq { get; set; }
 
         [JsonProperty("exppc")]
         public string Exppc { get; set; }
 
         [JsonProperty("netcoins")]
-        public string Netcoins { get; set; }
+        public int Netcoins { get; set; }
 
         [JsonProperty("level")]
         public int Level { get; set; }
