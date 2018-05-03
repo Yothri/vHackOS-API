@@ -20,6 +20,7 @@ namespace vHackOS
         public vhRemoteBank RemoteBankEndpoint { get; }
         public vhMissions MissionsEndpoint { get; }
         public vhRemoteLog RemoteLogEndpoint { get; }
+        public vhScan ScanEndpoint { get; }
 
         public vhGame()
         {
@@ -37,6 +38,7 @@ namespace vHackOS
             RemoteBankEndpoint = new vhRemoteBank();
             MissionsEndpoint = new vhMissions();
             RemoteLogEndpoint = new vhRemoteLog();
+            ScanEndpoint = new vhScan();
 
             LoginEndpoint.OnLogin += LoginEndpoint_OnLogin;
         }
@@ -61,6 +63,7 @@ namespace vHackOS
             RemoteBankEndpoint.SetCredentials(credentials);
             MissionsEndpoint.SetCredentials(credentials);
             RemoteLogEndpoint.SetCredentials(credentials);
+            ScanEndpoint.SetCredentials(credentials);
         }
 
         ~vhGame()
@@ -92,6 +95,7 @@ namespace vHackOS
                 RemoteBankEndpoint?.Dispose();
                 MissionsEndpoint?.Dispose();
                 RemoteLogEndpoint?.Dispose();
+                ScanEndpoint?.Dispose();
             }
         }
     }
