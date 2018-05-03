@@ -70,22 +70,26 @@ namespace vHackOS.Web
 
         internal T Execute(vhRequest request)
         {
-            Thread.Sleep(500);
-            var req = WebRequest.Create(API_URL + Endpoint + request.GetRequestPayload());
-            req.Proxy = null;
-            
-            var response = default(T);
-            using (var res = req.GetResponse())
-            using (var reader = new StreamReader(res.GetResponseStream()))
+            lock(vhGame.QueryLockObj)
             {
-                var str = reader.ReadToEnd();
-                response = JsonConvert.DeserializeObject<T>(str);
-            }
+                var req = WebRequest.Create(API_URL + Endpoint + request.GetRequestPayload());
+                req.Proxy = null;
 
-            if (response.Result == "36")
-                throw new UnauthorizedException("Invalid or missing authentication credentials.");
+                var response = default(T);
+                using (var res = req.GetResponse())
+                using (var reader = new StreamReader(res.GetResponseStream()))
+                {
+                    var str = reader.ReadToEnd();
+                    response = JsonConvert.DeserializeObject<T>(str);
+                }
 
-            return response;
+                if (response.Result == "36")
+                    throw new UnauthorizedException("Invalid or missing authentication credentials.");
+
+                Thread.Sleep(1000);
+
+                return response;
+            }            
         }
 
         public virtual T Update()

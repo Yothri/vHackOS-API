@@ -6,6 +6,8 @@ namespace vHackOS
 {
     public sealed class vhGame : IDisposable
     {
+        public static object QueryLockObj = new object();
+
         public vhLogin LoginEndpoint { get; }
         public vhProfile ProfileEndpoint { get; }
         public vhServer ServerEndpoint { get; }
@@ -21,6 +23,7 @@ namespace vHackOS
         public vhMissions MissionsEndpoint { get; }
         public vhRemoteLog RemoteLogEndpoint { get; }
         public vhScan ScanEndpoint { get; }
+        public vhSdk SdkEndpoint { get; }
 
         public vhGame()
         {
@@ -39,6 +42,7 @@ namespace vHackOS
             MissionsEndpoint = new vhMissions();
             RemoteLogEndpoint = new vhRemoteLog();
             ScanEndpoint = new vhScan();
+            SdkEndpoint = new vhSdk();
 
             LoginEndpoint.OnLogin += LoginEndpoint_OnLogin;
         }
@@ -64,6 +68,7 @@ namespace vHackOS
             MissionsEndpoint.SetCredentials(credentials);
             RemoteLogEndpoint.SetCredentials(credentials);
             ScanEndpoint.SetCredentials(credentials);
+            SdkEndpoint.SetCredentials(credentials);
         }
 
         ~vhGame()
@@ -96,6 +101,7 @@ namespace vHackOS
                 MissionsEndpoint?.Dispose();
                 RemoteLogEndpoint?.Dispose();
                 ScanEndpoint?.Dispose();
+                SdkEndpoint?.Dispose();
             }
         }
     }
