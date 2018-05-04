@@ -24,6 +24,7 @@ namespace vHackOS
         public vhRemoteLog RemoteLogEndpoint { get; }
         public vhScan ScanEndpoint { get; }
         public vhSdk SdkEndpoint { get; }
+        public vhLog LogEndpoint { get; }
 
         public vhGame()
         {
@@ -43,6 +44,7 @@ namespace vHackOS
             RemoteLogEndpoint = new vhRemoteLog();
             ScanEndpoint = new vhScan();
             SdkEndpoint = new vhSdk();
+            LogEndpoint = new vhLog();
 
             LoginEndpoint.OnLogin += LoginEndpoint_OnLogin;
         }
@@ -69,6 +71,7 @@ namespace vHackOS
             RemoteLogEndpoint.SetCredentials(credentials);
             ScanEndpoint.SetCredentials(credentials);
             SdkEndpoint.SetCredentials(credentials);
+            LogEndpoint.SetCredentials(credentials);
         }
 
         ~vhGame()
@@ -102,6 +105,7 @@ namespace vHackOS
                 RemoteLogEndpoint?.Dispose();
                 ScanEndpoint?.Dispose();
                 SdkEndpoint?.Dispose();
+                LogEndpoint?.Dispose();
             }
         }
     }
