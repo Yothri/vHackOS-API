@@ -2,8 +2,8 @@
 {
     public enum MinerState
     {
-        Done,
-        Busy,
-        Idle
+        Idle,
+        Mining,
+        Collectable
     }
 }
